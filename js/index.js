@@ -1,7 +1,7 @@
 console.log('let us start trip!');
 
-const testArray1 = createArr(400000,148888);
-const testArray2 = createArr(200000,148888);
+const testArray1 = createArr(4000000,1488880);
+const testArray2 = createArr(2000000,1488880);
 
 if(window.Worker){
     console.log('worker is Ready!');
@@ -39,9 +39,9 @@ function testModelB() {
         console.log('ModelB Time ' + (Number(new Date()) - startTime));
     }
 
-    testWorker1.postMessage(testArray2);
+    testWorker2.postMessage(testArray2);
     console.log('Arr2 Post!');
-    testWorker1.onmessage = (res) => {
+    testWorker2.onmessage = (res) => {
         console.log(res);
         console.log('Arr2 get result!');
         console.log('ModelB Time ' + (Number(new Date()) - startTime));

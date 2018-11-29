@@ -27,14 +27,10 @@ onerror = param => {
     console.log(param);
 };
 
-onmessage = (param,callfn) => {
-    callfn = callfn || function () {
-        throw new Error();
-    };
+onmessage = (param) => {
 
     console.log('Worker onmessage start!');
     console.log(param);
-    callfn();
     postMessage(fn.checkObject(param.data));
     console.log('Worker onmessage end!');
 };

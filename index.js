@@ -3,8 +3,8 @@
 
 console.log('let us start trip!');
 
-var testArray1 = createArr(400000, 148888);
-var testArray2 = createArr(200000, 148888);
+var testArray1 = createArr(4000000, 1488880);
+var testArray2 = createArr(2000000, 1488880);
 
 if (window.Worker) {
     console.log('worker is Ready!');
@@ -40,9 +40,9 @@ function testModelB() {
         console.log('ModelB Time ' + (Number(new Date()) - startTime));
     };
 
-    testWorker1.postMessage(testArray2);
+    testWorker2.postMessage(testArray2);
     console.log('Arr2 Post!');
-    testWorker1.onmessage = function (res) {
+    testWorker2.onmessage = function (res) {
         console.log(res);
         console.log('Arr2 get result!');
         console.log('ModelB Time ' + (Number(new Date()) - startTime));
